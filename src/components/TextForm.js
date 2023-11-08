@@ -11,6 +11,12 @@ export default function TextForm()
         setText(newText);
     }
 
+    const handleLoClick=()=>
+    {   
+        let newText = text.toLowerCase();
+        setText(newText);
+    }
+
     const handleOnChange=(event)=>
     {
         console.log("changed")
@@ -25,8 +31,13 @@ export default function TextForm()
                 <input type="text" value={text} onChange={handleOnChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                 <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
-        <button type="submit" onClick={handleOnClick} className="btn btn-primary">Submit</button>
-    </form>
+            <button type="submit" onClick={handleOnClick} className="btn btn-primary">Uppercase</button>
+            <button type="submit" onClick={handleLoClick} className="btn btn-primary">Lowercase</button>
+        </form>
+        <div>
+            <h4>{text.split(" ").length} words and {text.length} characters</h4>
+            <h4>{text.split(" ").length * 0.008} minutes read</h4>
+        </div>
         </div>
     )
 }
