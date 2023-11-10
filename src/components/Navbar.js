@@ -3,7 +3,7 @@ import React from "react";
 export default function  Navbar(prop)
 {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className={`navbar navbar-expand-lg navbar-${prop.mode} bg-${prop.mode}`}>
     <div className="container-fluid">
         {/* title data passed here */}
       <a className="navbar-brand" href="/">{prop.title}</a>
@@ -34,8 +34,10 @@ export default function  Navbar(prop)
           </li>
         </ul>
         <form className="d-flex">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
+        <div className={`form-check form-switch text-${prop.toggle.color}`}>
+              <input class="form-check-input" type="checkbox" onClick={prop.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
+              <label class="form-check-label" for="flexSwitchCheckDefault">{prop.toggle.text}</label>
+        </div>
         </form>
       </div>
     </div>
