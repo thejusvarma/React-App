@@ -4,9 +4,10 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const[mode, setMode] = useState("white")
+  const[mode, setMode] = useState("light")
 
   const[alert,setAlert] = useState(null);
 
@@ -22,7 +23,7 @@ function App() {
 
   const toggleMode=()=>
   {
-      if(mode==="white")
+      if(mode==="light")
       {
         setMode("dark");
         setToggle({text : "Enable Light Mode", color : "light"})
@@ -34,7 +35,7 @@ function App() {
       }
       else
       {
-        setMode("white");
+        setMode("light");
         setToggle({text : "Enable Dark Mode", color : "dark"})
         document.body.style.backgroundColor = "white";
         setStyle({ color: "black",
@@ -45,10 +46,15 @@ function App() {
 
   return (
     <>
-    <Navbar title = "SIPO" mode={mode} toggleMode={toggleMode} toggle={toggle}/>
-    <Alert alert = {alert}/>
-    <TextForm myStyle={myStyle} toggle={toggle}/> 
-    <About myStyle={myStyle} />
+    <BrowserRouter>
+      <Navbar title = "SIPO" mode={mode} toggleMode={toggleMode} toggle={toggle}/>
+      <Alert alert = {alert}/>
+      {/* routes list inside */}
+      <Routes>
+              <Route exact path="/about" element={ <About myStyle={myStyle} />}></Route>
+              <Route exact path="/textform" element={<TextForm myStyle={myStyle} toggle={toggle}/> }></Route>
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
