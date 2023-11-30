@@ -6,12 +6,13 @@ export default function About(prop)
     const a = useContext(noteContext)
     return (
         <>
-       
+        {a.name}
         <div className="accordion container" id="accordionExample" style={prop.myStyle}>
             <div className="accordion-item"  style={prop.myStyle}>
                 <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" style={prop.myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    {a.name}                    </button>
+                        Accordion Item #1
+                    </button>
                 </h2>
                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body">

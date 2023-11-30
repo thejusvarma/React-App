@@ -1,32 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function  Navbar(prop)
 {
-  const linkStyle = {
-    margin: "1rem",
-    textDecoration: "none",
-  };
+  // below two lines just helps in darken the tag text which is currently openend
+  let location = useLocation();
+  const mystyle = { "font-weight": "bold"  }
+  
     return (
       <>
-      
-        <nav className={`navbar navbar-expand-lg navbar-${prop.mode} bg-${prop.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${prop.mode} bg-${prop.mode}`}>
     <div className="container-fluid">
         {/* title data passed here */}
       <Link className="navbar-brand" to="/">{prop.title}</Link>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mt-3 mt-lg-1">
           <li className="nav-item">
-            <Link className="nav-Link active " aria-current="page" style={linkStyle}  to="/">Home</Link>
+          <Link className="nav-Link active" aria-current="page" style={{...prop.link,...location.pathname==="/"?mystyle:""}}  to="/">Home</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-Link active " aria-current="page" style={linkStyle}  to="/about">About</Link>
+          <Link className="nav-Link" aria-current="page" style={{...prop.link,...location.pathname==="/about"?mystyle:""}} to="/about">About</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-Link active " aria-current="page" style={linkStyle}  to="/textform">Form</Link>
+          <Link className="nav-Link" aria-current="page" style={{...prop.link,...location.pathname==="/textform"?mystyle:""}}  to="/textform">Form</Link>
           </li>
         </ul>
         <form className="d-flex">
