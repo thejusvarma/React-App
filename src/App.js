@@ -3,9 +3,10 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import Note from './components/Note';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import NoteState from './context/notes/NoteState';
 
 function App() {
   const[mode, setMode] = useState("light")
@@ -47,15 +48,18 @@ function App() {
 
   return (
     <>
+    <NoteState>
     <BrowserRouter>
       <Navbar title = "SIPO" mode={mode} toggleMode={toggleMode} toggle={toggle}/>
       <Alert alert = {alert}/>
+      <Note></Note>
       {/* routes list inside */}
       <Routes>
               <Route exact path="/about" element={ <About myStyle={myStyle} />}></Route>
               <Route exact path="/textform" element={<TextForm myStyle={myStyle} toggle={toggle}/> }></Route>
       </Routes>
     </BrowserRouter>
+    </NoteState>
     </>
   );
 }
