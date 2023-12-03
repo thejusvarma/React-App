@@ -6,7 +6,7 @@ const NoteState = (props)=>{
             "_id": "6566af23b728a7d6a160ce2c",
             "user": "65644f936fd2eb115debc389",
             "title": "thejus fwedfwef",
-            "content": "wfnjorjrnfr3ffnjrribrfehieefnfebek",
+            "content": "The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md",
             "tag": "General",
             "date": "2023-11-29T03:25:23.934Z",
             "__v": 0
