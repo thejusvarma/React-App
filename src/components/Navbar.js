@@ -6,7 +6,7 @@ export default function  Navbar(prop)
   // below two lines just helps in darken the tag text which is currently openend
   let location = useLocation();
   const mystyle = { "font-weight": "bold"  }
-  
+
     return (
       <>
     <nav className={`navbar navbar-expand-lg navbar-${prop.mode} bg-${prop.mode}`}>

@@ -1,49 +1,18 @@
 import React from "react";
 
-export default function Note()
+export default function Note(props)
 {
 return(
     <>
-    <div className="container mt-5">
-        <div className="row">
-            <div className="col-sm-3">
+    <div className="container mt-4">
                 <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div className="col-sm-3">
-                <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
+                    <h5 className="card-title">{props.title}</h5>
+                    <p className="card-text">{props.content}</p>
+                    <a href="#" className="btn btn-primary btn-sm">Open</a>
                 </div>
             </div>
-            <div className="col-sm-3">
-                <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div className="col-sm-3">
-                <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
+    </div>
     </>
 )
 }
