@@ -26,6 +26,10 @@ function App() {
   const showAlert=(message,type)=>
   { 
     setAlert({msg:message, type:type})
+    setTimeout(() => {
+      setAlert(null)
+      ;
+    }, 3000);
   }
 
   const toggleMode=()=>
