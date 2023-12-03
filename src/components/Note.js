@@ -10,9 +10,9 @@ return(
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.content.slice(0,200)}...</p>
                     <div className="d-flex justify-content-between">
-                    <a href="#" className="btn btn-secondary btn-sm">Read</a>
-                    <a href="#" className="btn btn-secondary btn-sm">Edit</a>
-                    <a href="#" className="btn btn-secondary btn-sm">Delete</a>
+                    <i class="fa-brands fa-readme"></i>
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <i class="fa-solid fa-trash-can"></i>
                     </div>
                 </div>
             </div>
