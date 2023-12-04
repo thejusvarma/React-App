@@ -1,4 +1,4 @@
-import CreateNote from "./CreateNote";
+import CreateNote from "./AddNote";
 import NoteList from "./NoteList";
 
 export default function Home(prop)

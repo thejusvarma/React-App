@@ -9,10 +9,10 @@ export default function NoteList()
     return(
     <>
         <div className="row">
-        {notes.map((note, index) => {
+        {notes.map((note) => {
         return (
             <div className="col-md-4">
-            <Note title={note.title} content={note.content} ></Note>
+            <Note key={note._id} note={note}></Note>
             </div>
             );
         })}

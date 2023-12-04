@@ -5,7 +5,7 @@ export default function  Navbar(prop)
 {
   // below two lines just helps in darken the tag text which is currently openend
   let location = useLocation();
-  const mystyle = { "font-weight": "bold"  }
+  const mystyle = { "fontWeight": "bold"  }
 
     return (
       <>
@@ -27,8 +27,8 @@ export default function  Navbar(prop)
         </ul>
         <form className="d-flex">
         <div className={`form-check form-switch text-${prop.toggle.color}`}>
-              <input class="form-check-input" type="checkbox" onClick={prop.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
-              <label class="form-check-label" for="flexSwitchCheckDefault">{prop.toggle.text}</label>
+              <input className="form-check-input" type="checkbox" onClick={prop.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{prop.toggle.text}</label>
         </div>
         </form>
       </div>

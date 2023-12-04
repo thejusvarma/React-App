@@ -21,7 +21,7 @@ function App() {
   const[myLink, setLink] = useState({color:"black",margin: "1rem",
   textDecoration: "none",})
 
-  const[toggle,setToggle] = useState({text : "Enable Dark Mode", color : "dark"})
+  const[toggle,setToggle] = useState({text : "Enable Dark Mode", color : "dark", backgroundColor : '#e6e6e6'})
 
   const showAlert=(message,type)=>
   { 
@@ -29,7 +29,7 @@ function App() {
     setTimeout(() => {
       setAlert(null)
       ;
-    }, 3000);
+    }, 2000);
   }
 
   const toggleMode=()=>
@@ -38,7 +38,7 @@ function App() {
       {
         setMode("dark");
         setToggle({text : "Enable Light Mode", color : "light"})
-        document.body.style.backgroundColor = '#1a1a1a';
+        document.body.style.backgroundColor = '#1b1b1b';
         setStyle({ color: "white",
         backgroundColor: "#1a1a1a",
         borderColor: "grey"})
